@@ -1,0 +1,21 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/keycloak-starter
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/keycloak-starter
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: spring-security
+            client-secret: pIShkrpn8UbphJGx1WmoNzFZyO0TiaLN
+            scope: openid
+server:
+  port: 8081
+logging:
+  level:
+    org.springframework.security: TRACE
